@@ -1,4 +1,13 @@
 Project2::Application.routes.draw do
+  get "users/new"
+	match "users/create" => "users#create"
+	match "users/chooseUser" => "users#chooseUser"
+	match "users/edit" => "users#edit"
+	match "users/update" => "users#update"
+  get "users/edit"
+
+  get "users/index"
+
   get "user_suggestions/index"
 
   # The priority is based upon order of creation:

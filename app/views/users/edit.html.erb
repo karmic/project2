@@ -1,0 +1,8 @@
+<%= form_for @user, :url => { :action => "update" } do |f| %>
+	<%= f.label "Name: " %> <%= f.text_field :name %> <br />
+	<%= f.label "Username: " %> <%= f.text_field :username %> <br />
+	<%= f.label "Division: " %> <%= f.text_field :division %> <br />
+	<%= f.label "Department: " %> <%= f.text_field :department %> <br />
+	<%= f.hidden_field :id %>
+	<%= f.submit "Submit" %>
+<% end %>

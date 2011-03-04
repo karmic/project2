@@ -17,11 +17,11 @@ create or replace function make_pass(_secret text)
 
 -- create view and rule for inserting into users
 drop view if exists users_view;
-create view users_view as select users.name,users.username,
+create view users_view as select users.name,users.username,users.division,users.department,
 	users.password from users;
 create or replace rule ins_user as on insert to users_view
-	do instead insert into users(name,username,enc_pass,salt)
-	values (new.name,new.username,
+	do instead insert into users(name,username,division,department,enc_pass,salt)
+	values (new.name,new.username,new.division,new.department,
 	make_pass(make_salt(new.password)||new.password),
 	make_salt(new.password));
 

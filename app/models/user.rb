@@ -13,4 +13,5 @@
 #
 
 class User < ActiveRecord::Base
+	attr_accessible :name,:username,:division,:department
 end
