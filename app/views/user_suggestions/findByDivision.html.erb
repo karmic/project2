@@ -1,0 +1,7 @@
+<% @user = @usersuggestions.collect {|u| u.name}.join ',' %>
+<% @division = @usersuggestions.first.division %>
+<table border = "1">
+	<tr>
+		<td> <%= @user %> </td> <td> <%= @division %> </td>
+	</tr>
+</table>
