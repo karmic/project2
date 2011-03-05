@@ -1,0 +1,6 @@
+<h2> You Are Logged In </h2>
+<% if cookies.signed[:user_id] == 1 %>
+	<%= link_to "Continue", :controller => "users", :action => "index" %>
+<% else %>
+	<%= link_to "Main", :controller => "author_books", :action => "index" %>
+<% end %>

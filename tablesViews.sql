@@ -21,7 +21,7 @@ create table users(
 drop table if exists suggestions cascade;
 create table suggestions(
 	id integer not null primary key default nextval('suggestion_id_seq'),
-	suggestion text,
+	suggestion text unique,
 	created_at timestamp,
 	updated_at timestamp
 );
