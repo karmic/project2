@@ -3,18 +3,18 @@
 			<th> Name </th>
 			<th> Division </th>
 			<th> Department </th>
+			<th> Suggestion </th>
 			<th> Created </th>
 			<th> Updated </th>
-			<th> Suggestion </th>
 		</tr>
 	<% @usersuggestions.each do |ab| %>
 		<tr>
 			<td> <%= ab.name %> </td>
 			<td> <%= ab.division %> </td>
 			<td> <%= ab.department %> </td>
+			<td> <%= ab.suggestion %> </td>
 			<td> <%= ab.created_at %> </td>
 			<td> <%= ab.updated_at %> </td>
-			<td> <%= ab.suggestion %> </td>
 		</tr>
 	<% end %>
 </table>

@@ -6,10 +6,10 @@
 #  name       :text
 #  username   :text
 #  password   :text
+#  division   :text
+#  department :text
 #  enc_pass   :text
 #  salt       :text
-#  department :text
-#  division   :text
 #
 
 class User < ActiveRecord::Base

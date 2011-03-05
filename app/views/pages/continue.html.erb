@@ -2,5 +2,5 @@
 <% if cookies.signed[:user_id] == 1 %>
 	<%= link_to "Continue", :controller => "users", :action => "index" %>
 <% else %>
-	<%= link_to "Main", :controller => "author_books", :action => "index" %>
+	<%= link_to "Main", :controller => "user_suggestions", :action => "index" %>
 <% end %>

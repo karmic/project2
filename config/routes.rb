@@ -1,10 +1,10 @@
 Project2::Application.routes.draw do
+
  	match "pages/login", :via => [:get,:post]
 	match "pages/continue" => "pages#continue"
 
   get "pages/logout"
 	root :to => "pages#login"
-
   get "users/new"
 	match "users/create" => "users#create"
 	match "users/chooseUser" => "users#chooseUser"

@@ -21,19 +21,14 @@ create table users(
 drop table if exists suggestions cascade;
 create table suggestions(
 	id integer not null primary key default nextval('suggestion_id_seq'),
-	suggestion text unique,
+	user_id integer references users(id),
+	suggestion text,
 	created_at timestamp,
 	updated_at timestamp
-);
-drop table if exists user_suggestions cascade;
-create table user_suggestions(
-	user_id integer references users(id),
-	suggestion_id integer references suggestions(id)
 );
 -- create view
 drop view if exists user_suggestion_view cascade;
 create view user_suggestion_view as
 	select users.id as userid,users.name,users.department,users.division,suggestions.id as 
 	suggestionid,suggestions.suggestion,suggestions.created_at,suggestions.updated_at from 
-	users join user_suggestions on users.id=user_suggestions.user_id join suggestions on 
-	user_suggestions.suggestion_id=suggestions.id; 
+	users join suggestions on users.id=suggestions.user_id;
