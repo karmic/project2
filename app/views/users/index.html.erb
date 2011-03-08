@@ -17,4 +17,5 @@
 <% if cookies.signed[:user_id] == 1 %>
 	<%= link_to "Add User", :controller => "users", :action => "new" %> 
 	<%= link_to "Edit User", :controller => "users", :action => "chooseUser" %>
+	<%= link_to "View Suggestions", :controller => "user_suggestions", :action => "index" %>
 <% end %>
