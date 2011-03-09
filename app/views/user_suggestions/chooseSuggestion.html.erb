@@ -1,6 +1,6 @@
 <h2> Choose Suggestion To Edit </h2>
 <%= form_for :id, :url => {:action => "edit"} do |f| %>
-	<%= f.collection_select @suggestion, @suggestions, :id, :suggestion,
+	<%= f.collection_select @suggestion, @usersuggestions, :suggestionid, :suggestion,
 		options = {:prompt => "Choose a suggestion"}, :class => "suggestion" %> <br />
 	<%= f.submit "Submit" %>
 <% end %>

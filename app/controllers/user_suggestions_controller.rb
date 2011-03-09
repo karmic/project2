@@ -5,7 +5,7 @@ class UserSuggestionsController < ApplicationController
 	def create
 		@suggestion = Suggestion.new
 		@suggestion['user_id'] = cookies.signed[:user_id]
-		usersuggestion['suggestion'] = params[:suggestion][:suggestion]
+		@suggestion['suggestion'] = params[:suggestion][:suggestion]
 		@suggestion.save
 		redirect_to :controller => "user_suggestions", :action => "index"
 	end
@@ -23,7 +23,12 @@ class UserSuggestionsController < ApplicationController
   end
 
 	def chooseSuggestion
-  	@suggestions = Suggestion.all
+  	user = User.find(cookies.signed[:user_id])
+		if user['department'] == user['division']
+			@usersuggestions = UserSuggestion.find_all_by_division(user['division'])
+		else
+			@usersuggestions = UserSuggestion.find_all_by_department(user['department'])
+		end
   end
 	
 	def update
