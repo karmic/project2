@@ -19,6 +19,8 @@ class PagesController < ApplicationController
 		end
 	end
 
-  def logout
+  def destroy
+    redirect_to :controller => "pages", :action => "login"
   end
+
 end

@@ -2,7 +2,7 @@ Project2::Application.routes.draw do
 
 	match "pages/login", :via => [:get,:post]
 	match "pages/continue" => "pages#continue"
-	get "pages/logout"
+	match "pages/destroy" => "pages#destroy"
 	root :to => "pages#login"
 
   get "users/new"
@@ -25,6 +25,8 @@ Project2::Application.routes.draw do
 	get "user_suggestions/edit"
 
 	get "user_suggestions/index"
+
+	get "user_suggestions/list"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

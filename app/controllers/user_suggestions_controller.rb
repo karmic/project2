@@ -1,4 +1,10 @@
 class UserSuggestionsController < ApplicationController
+
+	def list	
+		@usersuggestions = UserSuggestion.all
+    render :xml => @usersuggestions.to_xml(:dasherize => false)
+	end
+
 	def new
 	end
 
@@ -16,10 +22,6 @@ class UserSuggestionsController < ApplicationController
 
 	def index
 		@usersuggestions = UserSuggestion.find(:all, :order => 'created_at')
-		respond_to do |format|
-      format.html
-      format.xml {render :xml => @usersuggestions, :dasherize => false}
-    end
   end
 
 	def chooseSuggestion
