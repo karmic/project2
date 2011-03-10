@@ -21,7 +21,7 @@
 </table>
 <% if cookies.signed[:authenticated] %>
 	<%= link_to "Add New Suggestion", :controller => "user_suggestions", :action => "new" %>
-	<%= link_to "Edit Suggestion", :controller => "user_suggestions", :action => "chooseSuggestion" %> <br />
+	<%= link_to "Edit Suggestion", :controller => "user_suggestions", :action => "chooseSuggestion" %> 
+	<br /> <br />
 	<%= link_to "Exit", :controller => "pages", :action => "destroy" %>
-	
 <% end %>

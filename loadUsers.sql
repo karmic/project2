@@ -1,5 +1,7 @@
 insert into users_view (name,username,password,division,department)
-	values ('Catherine Buted','catherine','karmic','div1','div1');
+	values ('Catherine Buted','catherine','karmic','Administrator','Administrator');
+insert into users_view (name,username,password,division,department)
+	values ('Teddy Pomer','teddy','pomer','div1','div1');
 insert into users_view (name,username,password,division,department)
 	values ('Jane Doe','jane','doe','div1','deptA1');
 insert into users_view (name,username,password,division,department)
