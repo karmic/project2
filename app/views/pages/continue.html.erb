@@ -1,6 +1,9 @@
 <h2> You Are Logged In </h2> 
 <% if cookies.signed[:user_id] == 1 %>
-	<%= link_to "Continue", :controller => "users", :action => "index" %>
+	<%= link_to "View Users", :controller => "users", :action => "index" %> <br />
+	<%= link_to "View Suggestions", :controller => "user_suggestions", :action => "index" %> <br /> <br />
+	<%= link_to "Exit", :controller => "pages", :action => "destroy" %>
 <% else %>
-	<%= link_to "Main", :controller => "user_suggestions", :action => "index" %>
+	<%= link_to "View Suggestions", :controller => "user_suggestions", :action => "index" %> <br /> <br />
+	<%= link_to "Exit", :controller => "pages", :action => "destroy" %>
 <% end %>

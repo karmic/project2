@@ -31,7 +31,10 @@ class UserSuggestionsController < ApplicationController
 		else
 			@usersuggestions = UserSuggestion.find_all_by_department(user['department'])
 		end
-  end
+		if user['division'] == "Administrator" and user['department'] == "Administrator"
+			@usersuggestions = UserSuggestion.all
+		end
+	end
 	
 	def update
 		@suggestion = Suggestion.find(params[:suggestion][:id])
