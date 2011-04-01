@@ -19,9 +19,10 @@ create or replace function insertSuggestion(user_id integer,_suggestion text)
 	returns integer as
 	$func$
 	begin
-		execute 'insert into suggestions (user_id, suggestion)' 
-			'values (cookies.signed[:user_id], params[:suggestion])';
-		return currval('suggestion_id_seq');
+		execute 'insert into suggestions (user_id, suggestion,
+		created_at, updated_at) values (' || user_id || ',' ||
+		quote_literal(_suggestion) ||',now(),now())';
+	return currval('suggestion_id_seq');
 	end;
 	$func$
 	language 'plpgsql';
