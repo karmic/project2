@@ -11,7 +11,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: project2
+  database: project3
   pool: 5
   username: karmic
   password: P@ssw0rd
